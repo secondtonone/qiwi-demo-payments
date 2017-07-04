@@ -9,7 +9,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "pull-rest-api-node-js-sdk" : "git://github.com/QIWI-API/pull-rest-api-node-js-sdk.git"
+    "pull-rest-api-node-js-sdk": "git://github.com/QIWI-API/pull-rest-api-node-js-sdk.git"
   }
 }
