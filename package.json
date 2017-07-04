@@ -1,0 +1,15 @@
+{
+  "name": "qiwi-demo-payments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pull-rest-api-node-js-sdk" : "git://github.com/QIWI-API/pull-rest-api-node-js-sdk.git"
+  }
+}
