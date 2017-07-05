@@ -11,39 +11,36 @@
 </head>
 <body>
 
-<body>
+<body data-target="#navbar-payments" data-spy="scroll" data-offset="100">
 
 
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" role="navigation">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" >
             <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#"><img src="assets/logo_qiwi_rgb1.png" height="70"><small>DEMO</small></a>
 
             <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
+                <div id="navbar-payments">
                     <div class="nav-link"><h6>Прием платежей</h6></div>
 
-                    <ul class="nav nav-pills flex-column" id="navbar-payments" >
-                        <li role="presentation" class="active">
+                    <ul class="nav nav-pills flex-column" >
+                        <li class="active">
                             <a class="nav-link" href="#bill-on-shop">Выставление счета на сайте партнера<span class="sr-only"></span></a>
                         </li>
-                        <li role="presentation">
-                            <a class="nav-link" href="#bill-on-qiwi">Выставление счета в форме QIWI<span class="sr-only"></span></a>
-                        </li>
-                        <li role="presentation">
+                        <li>
                             <a class="nav-link" href="#bill-on-iframe">Платежная форма QIWI в IFrame<span class="sr-only"></span></a>
                         </li>
-                        <li role="presentation">
+                        <li>
                             <a class="nav-link" href="#bill-on-mob-ballance">Оплата с баланса мобильного<span class="sr-only"></span></a>
                         </li>
                         <!-- <li role="presentation">
                             <a class="nav-link" href="#">Эквайринг - оплата картой<span class="sr-only"></span></a>
                         </li> -->
                     </ul>
-                </li>
+                </div>
             </ul>
 
             <!--<ul class="nav nav-pills flex-column">
@@ -59,7 +56,7 @@
             </ul>-->
         </nav>
 
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3" data-target="navbar-payments" data-spy="scroll" data-offset="0">
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3" >
             <h2 id="bill-on-shop">Выставление счета на сайте</h2>
 
             <div class="container jumbotron">
@@ -98,41 +95,7 @@
             </div>
 
 
-            <h2 id="bill-on-qiwi">Выставление счета на форме QIWI</h2>
 
-            <div class="container jumbotron">
-                <div class="row">
-
-                    <div class="col">
-                        <div class="card" style="width: 28rem;">
-                            <img class="card-img-top" src="https://im0-tub-ru.yandex.net/i?id=c485f942b3f7303c63099c63270ed19b&n=33&h=215&w=410" alt="Card image cap">
-                            <div class="card-block">
-                                <h4 class="card-title">Beats Solo3 Wireless On-Ear Headphones – Black - 1$</h4>
-                                <p class="card-text">
-                                    With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.</p>
-                                <form class="form-inline" method="post" target="_blank" action="https://bill.qiwi.com/order/external/create.action?comm=test&txn_id=0000&from=000000&summ=1.11&successUrl=http%3A%2F%2Ftest.ru%3Fcurrency=643&to=%2B71234567890">
-                                    <div class="form-group">
-                                        <label class="sr-only">Телефон</label>
-                                    </div>
-                                    <div class="form-group mx-sm-3">
-                                        <label for="inputPassword2" class="sr-only">Телефон +79165412510</label>
-                                        <input type="text" class="form-control" id="inputPassword2" value="79164444444" disabled placeholder="Телефон">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Купить</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <ul class="list-group">
-                            <li class="list-group-item active">Документация</li>
-                            <li class="list-group-item"><a class="nav-link" target="_blank" href="https://developer.qiwi.com/pullrest/pullrest_ru.html#http">Форма выставления счета</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
 
 
             <h2 id="bill-on-iframe">Платежная форма QIWI в IFrame</h2>
