@@ -18,20 +18,6 @@ $('#buy-payment-bill').click(function() {
 
 });
 
-$('#buy-payment-create').click(function() {
-
-    var options = {
-        url: '/paymentCreate',
-        method: 'POST',
-        dataType: 'json'
-    };
-
-    $.when($.ajax(options)).then(function(data){
-        console.log(data);
-        window.location.replace(data.redirect);
-    });
-
-});
 
 $('#buy-payment-mobile').click(function() {
 

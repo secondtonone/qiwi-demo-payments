@@ -7,9 +7,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(bodyParser.json()); // support json encoded bodies
-                            //
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/',express.static('src'));
 
@@ -78,19 +78,6 @@ app.post('/paymentByBill', (req, res) =>{
 
 });
 
-app.post('/paymentCreate', (req, res) =>{
-
-    const redirectOptions = redirectOptionsTemp;
-
-    redirectOptions.transaction = generateBillId();
-    redirectOptions.amount = amount;
-
-    const redirect = client.paymentFormCreatBill(redirectOptions);
-
-    res.send({
-        redirect
-    });
-});
 
 app.post('/paymentForMobile', (req, res) =>{
 
