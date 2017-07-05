@@ -20,7 +20,7 @@
             <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="assets/logo_qiwi_rgb1.png" height="70"><small>DEMO</small></a>
+            <a class="navbar-brand" href="#"><img src="assets/logo_qiwi_rgb1.png" height="70"><small class="text-muted">DEMO</small></a>
 
             <ul class="nav nav-pills flex-column">
                 <div id="navbar-payments">
@@ -69,15 +69,19 @@
                               <h4 class="card-title">Beats Solo3 Wireless On-Ear Headphones – Black - 1$</h4>
                               <p class="card-text">
                                   With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.</p>
-                              <form class="form-inline">
+                              <form >
                                   <div class="form-group">
-                                      <label class="sr-only">Телефон</label>
+                                      <label>Телефон</label>
                                   </div>
-                                  <div class="form-group mx-sm-3">
-                                      <label for="phone-number-payment-bill" class="sr-only">Телефон +79165412510</label>
-                                      <input type="text" class="form-control" id="phone-number-payment-bill" value="79164444444" disabled placeholder="Телефон">
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                          <span class="input-group-addon" id="">+7</span>
+                                          <input type="text" class="form-control" id="phone-number-payment-bill" aria-describedby="basic-addon1">
+                                        </div>
+
                                   </div>
                                   <button type="button" class="btn btn-primary" id="buy-payment-bill">Купить</button>
+
                               </form>
                           </div>
                       </div>
@@ -104,7 +108,7 @@
                 <div class="row">
 
                     <div class="col">
-                        <iframe width="500" height="400" src="https://ishop.qiwi.com/public/order/embed.action?from=297958&ccy=RUB,"></iframe>
+                        <iframe  width="500" height="400" src="https://ishop.qiwi.com/public/order/embed.action?from=297958&ccy=RUB,"></iframe>
                     </div>
 
 
@@ -131,16 +135,20 @@
                                 <h4 class="card-title">Beats Solo3 Wireless On-Ear Headphones – Black - 1$</h4>
                                 <p class="card-text">
                                     With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.</p>
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label class="sr-only">Телефон</label>
-                                    </div>
-                                    <div class="form-group mx-sm-3">
-                                        <label for="phone-number-payment-mobile" class="sr-only">Телефон +79165412510</label>
-                                        <input type="text" class="form-control" id="phone-number-payment-mobile" value="79164444444" disabled placeholder="Телефон">
-                                    </div>
-                                    <button type="button" class="btn btn-primary" id="buy-payment-mobile">Купить</button>
-                                </form>
+                                 <form >
+                                  <div class="form-group">
+                                      <label for="phone-number-payment-mobile">Телефон</label>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                          <span class="input-group-addon" id="">+7</span>
+                                          <input type="text" class="form-control" id="phone-number-payment-mobile" aria-describedby="basic-addon1">
+                                        </div>
+
+                                  </div>
+                                  <button type="button" class="btn btn-primary" id="buy-payment-mobile">Купить</button>
+
+                              </form>
                             </div>
                         </div>
                     </div>

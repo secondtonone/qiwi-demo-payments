@@ -8,6 +8,9 @@ body {
   position: relative;
 }
 
+iframe {
+  border:  0;
+}
 /*
  * Typography
  */

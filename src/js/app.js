@@ -5,7 +5,7 @@ $(".nav a").on("click", function(){
 
 $('#buy-payment-bill').click(function() {
 
-    var phoneNumber = $('#phone-number-payment-bill').val();
+    var phoneNumber = '+7'+$('#phone-number-payment-bill').val();
 
     var options = {
         url: '/paymentByBill',
@@ -26,7 +26,7 @@ $('#buy-payment-bill').click(function() {
 
 $('#buy-payment-mobile').click(function() {
 
-    var phoneNumber = $('#phone-number-payment-mobile').val();
+    var phoneNumber = '+7'+$('#phone-number-payment-mobile').val();
 
     var options = {
         url: '/paymentForMobile',
