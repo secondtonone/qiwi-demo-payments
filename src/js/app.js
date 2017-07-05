@@ -1,3 +1,8 @@
+$(".nav a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+});
+
 $('#buy-payment-bill').click(function() {
 
     var phoneNumber = $('#phone-number-payment-bill').val();
