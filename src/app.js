@@ -32,3 +32,22 @@ $('#buy-payment-create').click(function() {
     });
 
 });
+
+$('#buy-payment-mobile').click(function() {
+
+    var phoneNumber = $('#phone-number-payment-mobile').val();
+
+    var options = {
+        url: '/paymentForMobile',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            tel: phoneNumber
+        }
+    };
+
+    $.when($.ajax(options)).then(function(data){
+        console.log(data);
+    });
+
+});
