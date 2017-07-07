@@ -38,6 +38,7 @@ $('#buy-payment-mobile').click(function() {
     };
 
     $.when($.ajax(options)).then(function(data){
+        console.log(data);
         $('#panel-mobile-payment').addClass('panel-hidden');
         $('#panel-try-again').removeClass('panel-hidden');
     });

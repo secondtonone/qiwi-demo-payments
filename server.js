@@ -11,17 +11,24 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/',express.static('src'));
+app.use('/',express.static('public'));
 
 app.get('/', (req, res) =>{
-    res.sendFile(__dirname + '/src/index.html')
+    res.sendFile(__dirname + '/public/index.html')
+});
+
+app.get('/successUrl', (req, res) =>{
+    res.sendFile(__dirname + '/public/index.html')
+});
+
+app.get('/failUrl', (req, res) =>{
+    res.sendFile(__dirname + '/public/index.html')
 });
 
 
-
-const prv_id = 481466;
-const api_id = '59058292';
-const api_password = 'MzAci8yl2NZgmoZDMZRD';
+const prv_id = '2042';
+const api_id = '59710186';
+const api_password = 'CKgKvnZyv5YAoY69DxlR';
 const amount = 0.01;
 
 const fieldsTemp = {
