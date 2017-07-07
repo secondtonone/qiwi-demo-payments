@@ -4,39 +4,16 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
   position: relative;
 }
 
 iframe {
   border:  0;
 }
-/*
- * Typography
- */
 
-h1 {
-  margin-top: 30px !important;
-  margin-bottom: 20px;
-  padding-bottom: 9px;
-  padding-top: 40px;
-  border-bottom: 1px solid #eee;
-}
 
-main {
-  padding-left: 6em !important;
-}
-
-.h2, h2 {
-  padding-top: 1em !important;
-  margin-top: 20px !important;
-  margin-bottom: 20px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid #eee;
-}
-
-.navbar {
-  padding: 0px !important;
+.main {
+  padding: 20px 40px;
 }
 
 /*
@@ -44,15 +21,17 @@ main {
  */
 
 .sidebar {
-  position: fixed !important;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  border-right: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(245, 245, 245);
+    border-right: 1px solid rgb(238, 238, 238);
 }
 
 /* Sidebar navigation */
@@ -95,4 +74,33 @@ main {
 .active a {
   background-color: rgb(2, 117, 216);
   color: white;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px  orange;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>img {
+  width: 90px;
+  cursor: pointer;
+}
+
+input[type=radio]:disabled + label>img {
+  -webkit-filter: grayscale(1);
+  -webkit-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  cursor: auto;
+}
+
+
+.panel-hidden {
+    display: none;
 }

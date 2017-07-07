@@ -1,182 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>QIWI DEMO PAYMENTS</title>
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="css/dashboard.css" rel="stylesheet">
 </head>
-<body>
 
 <body data-target="#navbar-payments" data-spy="scroll" data-offset="100">
+    <div class="container-fluid">
+        <div class="row">
 
+            <nav class="col-sm-3 col-md-2 sidebar" id="navbar-payments">
+                <!-- <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="assets/logo_qiwi_rgb1.png" height="70"><small class="text-muted">DEMO</small></a> -->
+                <ul class="nav nav-sidebar" >
+                    <li class="active">
+                        <a class="nav-link" href="#bill-on-shop">Выставление счета на сайте партнера<span class="sr-only"></span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#bill-on-mob-ballance">Оплата с баланса мобильного<span class="sr-only"></span></a>
+                    </li>
+                </ul>
+                <!-- <ul class="nav nav-pills">
+                    <div id="navbar-payments">
+                        <div class="nav-link">
+                            <h6>Прием платежей</h6></div>
 
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" >
-            <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="assets/logo_qiwi_rgb1.png" height="70"><small class="text-muted">DEMO</small></a>
-
-            <ul class="nav nav-pills flex-column">
-                <div id="navbar-payments">
-                    <div class="nav-link"><h6>Прием платежей</h6></div>
-
-                    <ul class="nav nav-pills flex-column" >
-                        <li class="active">
-                            <a class="nav-link" href="#bill-on-shop">Выставление счета на сайте партнера<span class="sr-only"></span></a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#bill-on-iframe">Платежная форма QIWI в IFrame<span class="sr-only"></span></a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#bill-on-mob-ballance">Оплата с баланса мобильного<span class="sr-only"></span></a>
-                        </li>
-                        <!-- <li role="presentation">
-                            <a class="nav-link" href="#">Эквайринг - оплата картой<span class="sr-only"></span></a>
-                        </li> -->
-                    </ul>
-                </div>
-            </ul>
-
-            <!--<ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Выплаты</a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Автоматизация QIWI Кошелька</a>
-                </li>
-            </ul>-->
-        </nav>
-
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3" >
-            <h2 id="bill-on-shop">Выставление счета на сайте</h2>
-
-            <div class="container jumbotron">
-              <div class="row">
-
-                  <div class="col">
-                      <div class="card" style="width: 28rem;">
-                          <img class="card-img-top" src="https://im0-tub-ru.yandex.net/i?id=c485f942b3f7303c63099c63270ed19b&n=33&h=215&w=410" alt="Card image cap">
-                          <div class="card-block">
-                              <h4 class="card-title">Beats Solo3 Wireless On-Ear Headphones – Black - 1$</h4>
-                              <p class="card-text">
-                                  With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.</p>
-                              <form >
-                                  <div class="form-group">
-                                      <label>Телефон</label>
-                                  </div>
-                                  <div class="form-group">
-                                      <div class="input-group">
-                                          <span class="input-group-addon" id="">+7</span>
-                                          <input type="text" class="form-control" id="phone-number-payment-bill" aria-describedby="basic-addon1">
-                                        </div>
-
-                                  </div>
-                                  <button type="button" class="btn btn-primary" id="buy-payment-bill">Купить</button>
-
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col">
-                      <ul class="list-group">
-                          <li class="list-group-item active">Документация</li>
-                          <li class="list-group-item"><a class="nav-link" target="_parent" href="https://developer.qiwi.com/pullrest/pullrest_ru.html#invoice_rest">Выставление счета</a></li>
-                          <li class="list-group-item"><a class="nav-link" target="_blank" href="https://developer.qiwi.com/pullrest/pullrest_ru.html#checkout">Платежная вебформа</a></li>
-                      </ul>
-                  </div>
-
-              </div>
-            </div>
-
-
-
-
-
-            <h2 id="bill-on-iframe">Платежная форма QIWI в IFrame</h2>
-
-            <div class="container jumbotron">
-                <div class="row">
-
-                    <div class="col">
-                        <iframe  width="500" height="400" src="https://ishop.qiwi.com/public/order/embed.action?from=297958&ccy=RUB,"></iframe>
                     </div>
+                </ul> -->
 
+            </nav>
 
-                    <div class="col">
-                        <ul class="list-group">
-                            <li class="list-group-item active">Документация</li>
-                            <li class="list-group-item"><a class="nav-link" target="_blank" href="https://developer.qiwi.com/pullrest/pullrest_ru.html#http">Форма выставления счета в  IFrame</a></li>
-                        </ul>
+            <main class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                <h2 id="bill-on-shop">Выставление счета на сайте</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="panel-title">Корзина</h3>
                     </div>
+                    <div class="panel-body">
+                        <div class="panel panel-default">
 
-                </div>
-            </div>
-
-
-            <h2 id="bill-on-mob-ballance">Оплата с баланса мобильного</h2>
-
-            <div class="container jumbotron">
-                <div class="row">
-
-                    <div class="col">
-                        <div class="card" style="width: 28rem;">
-                            <img class="card-img-top" src="https://im0-tub-ru.yandex.net/i?id=c485f942b3f7303c63099c63270ed19b&n=33&h=215&w=410" alt="Card image cap">
-                            <div class="card-block">
-                                <h4 class="card-title">Beats Solo3 Wireless On-Ear Headphones – Black - 1$</h4>
-                                <p class="card-text">
-                                    With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.</p>
-                                 <form >
-                                  <div class="form-group">
-                                      <label for="phone-number-payment-mobile">Телефон</label>
-                                  </div>
-                                  <div class="form-group">
-                                      <div class="input-group">
-                                          <span class="input-group-addon" id="">+7</span>
-                                          <input type="text" class="form-control" id="phone-number-payment-mobile" aria-describedby="basic-addon1">
-                                        </div>
-
-                                  </div>
-                                  <button type="button" class="btn btn-primary" id="buy-payment-mobile">Купить</button>
-
-                              </form>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Наименование и описание товара</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
+                                        <img src="https://im0-tub-ru.yandex.net/i?id=c485f942b3f7303c63099c63270ed19b&n=33&h=215&w=410" alt="headphones" class="img-thumbnail">
+                                    </div>
+                                    <div class="col-xs-1 col-sm-7 col-md-7 col-lg-7">
+                                        With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                        <strong class="text-primary">1 шт.</strong>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">х</div>
+                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                        <strong class="text-primary">0.01 руб.</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer text-right">
+                                Стоимость: <strong class="text-primary">0.01 руб.</strong>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col">
-                        <ul class="list-group">
-                            <li class="list-group-item active">Документация</li>
-                            <li class="list-group-item"><a class="nav-link" target="_blank" href="https://developer.qiwi.com/pullrest/pullrest_ru.html#http">Оплата с баланса мобильного телефона</a></li>
-                        </ul>
-                    </div>
+                        <div class="panel panel-default" id="method-payment-panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Выбрать способ оплаты</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="visa" class="input-hidden" disabled />
+                                        <label for="visa">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Visa_2014_logo_detail.svg/1200px-Visa_2014_logo_detail.svg.png" alt="QIWI" width="90" >
+                                        </label>
 
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="wm" class="input-hidden" disabled/>
+                                        <label for="wm">
+                                            <img src="https://www.webmoney.ru/img/icons/wmlogo_vector_blue.png" alt="QIWI" width="90" >
+                                        </label>
+
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="qiwi-payment" class="input-hidden"/>
+                                        <label for="qiwi-payment">
+                                            <img src="http://poligon-m.com/images/shop/QIWI/QIWI_Wallet_logotype_en_hor.png" width="90" >
+                                        </label>
+
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="master" class="input-hidden" disabled />
+                                        <label for="master">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png" alt="QIWI" width="90" >
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default panel-hidden" id="telephone-number-panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Введите номер телефона</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="">+7</span>
+                                                <input type="text" class="form-control" id="phone-number-payment-bill" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="panel-body">
+                            <div class="text-right">
+                                <h4>Общая сумма: <strong class="text-primary">0.01 руб.</strong></h4>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-lg pull-right" id="buy-payment-bill" disabled="true">Подтвердить и оплатить</button>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
 
 
-        </main>
+                <h2 id="bill-on-mob-ballance">Оплата с баланса мобильного</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="panel-title">Корзина</h3>
+                    </div>
+                    <div class="panel-body panel-hidden" id="panel-try-again">
+                        <h4 class="text-primary text-center">Товар оплачен!</h4>
+                        <button type="button" class="btn btn-primary btn-lg center-block" id="refresh">Попробовать снова</button>
+                    </div>
+                    <div class="panel-body" id="panel-mobile-payment">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Наименование и описание товара</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
+                                        <img src="https://im0-tub-ru.yandex.net/i?id=c485f942b3f7303c63099c63270ed19b&n=33&h=215&w=410" alt="headphones" class="img-thumbnail">
+                                    </div>
+                                    <div class="col-xs-1 col-sm-7 col-md-7 col-lg-7">
+                                        With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                        <strong class="text-primary">1 шт.</strong>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">х</div>
+                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                        <strong class="text-primary">5.00 руб.</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer text-right">
+                                Стоимость: <strong class="text-primary">5.00 руб.</strong>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="method-payment-panel-mobile">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Выбрать способ оплаты</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="visa" class="input-hidden" disabled />
+                                        <label for="visa">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Visa_2014_logo_detail.svg/1200px-Visa_2014_logo_detail.svg.png" alt="QIWI" width="90" >
+                                        </label>
+
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="wm" class="input-hidden" disabled/>
+                                        <label for="wm">
+                                            <img src="https://www.webmoney.ru/img/icons/wmlogo_vector_blue.png" alt="QIWI" width="90" >
+                                        </label>
+
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="qiwi-payment-mobile" class="input-hidden"/>
+                                        <label for="qiwi-payment-mobile">
+                                            <img src="http://poligon-m.com/images/shop/QIWI/QIWI_Wallet_logotype_en_hor.png" width="90" >
+                                        </label>
+
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <input type="radio" name="emotion" id="master" class="input-hidden" disabled />
+                                        <label for="master">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png" alt="QIWI" width="90" >
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default panel-hidden" id="telephone-number-panel-mobile">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Введите номер телефона</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="">+7</span>
+                                                <input type="text" class="form-control" id="phone-number-payment-mobile" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="panel-body">
+                            <div class="text-right">
+                                <h4>Общая сумма: <strong class="text-primary">5.00 руб.</strong></h4>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-lg pull-right" id="buy-payment-mobile" disabled="true">Подтвердить и оплатить</button>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script src="js/app.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
 </body>
 
-</body>
 </html>

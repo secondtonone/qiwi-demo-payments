@@ -38,7 +38,40 @@ $('#buy-payment-mobile').click(function() {
     };
 
     $.when($.ajax(options)).then(function(data){
-        console.log(data);
+        $('#panel-mobile-payment').addClass('panel-hidden');
+        $('#panel-try-again').removeClass('panel-hidden');
     });
 
 });
+
+$('#refresh').click(function(event) {
+    $('#panel-mobile-payment').removeClass('panel-hidden');
+    $('#panel-try-again').addClass('panel-hidden');
+
+    $('#method-payment-panel-mobile').removeClass('panel-hidden');
+    $('#telephone-number-panel-mobile').addClass('panel-hidden');
+});
+
+$('#qiwi-payment').change(function() {
+    $('#method-payment-panel').addClass('panel-hidden');
+    $('#telephone-number-panel').removeClass('panel-hidden');
+})
+
+$("#phone-number-payment-bill").on('input', function() {
+    if($(this).val() >= 10 ) {
+        $('#buy-payment-bill').prop('disabled', false);
+    }
+});
+
+
+$('#qiwi-payment-mobile').change(function() {
+    $('#method-payment-panel-mobile').addClass('panel-hidden');
+    $('#telephone-number-panel-mobile').removeClass('panel-hidden');
+})
+
+$("#phone-number-payment-mobile").on('input', function() {
+    if($(this).val() >= 10 ) {
+        $('#buy-payment-mobile').prop('disabled', false);
+    }
+});
+
