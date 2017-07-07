@@ -104,3 +104,11 @@ input[type=radio]:disabled + label>img {
 .panel-hidden {
     display: none;
 }
+
+.vertical-align {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    right: 0;
+
+}

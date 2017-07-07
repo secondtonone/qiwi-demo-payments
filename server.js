@@ -6,6 +6,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 5000;
+const host = 'http://188.225.76.15:5000';
+const successPath = 'successUrl';
+const failPath = 'failUrl';
+
+app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 
@@ -14,15 +19,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',express.static('public'));
 
 app.get('/', (req, res) =>{
-    res.sendFile(__dirname + '/public/index.html')
+    res.render(__dirname + '/public/index.ejs', { page: 'main'});
 });
 
-app.get('/successUrl', (req, res) =>{
-    res.sendFile(__dirname + '/public/index.html')
+app.get(`/${successPath}`, (req, res) =>{
+    res.render(__dirname + '/public/index.ejs', { page: 'success'});
 });
 
-app.get('/failUrl', (req, res) =>{
-    res.sendFile(__dirname + '/public/index.html')
+app.get(`/${failPath}`, (req, res) =>{
+    res.render(__dirname + '/public/index.ejs', { page: 'fail'});
 });
 
 
@@ -44,8 +49,8 @@ const redirectOptionsTemp = {
     transaction: '',
     shop: prv_id,
     iframe: true,
-    successUrl:'https://example.com/successUrl',
-    failUrl: 'https://example.com/failUrl'
+    successUrl:`${host}/${successPath}`,
+    failUrl: `${host}/${failPath}`
 };
 
 
