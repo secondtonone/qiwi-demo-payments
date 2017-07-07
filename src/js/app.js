@@ -50,6 +50,12 @@ $('#refresh').click(function(event) {
 
     $('#method-payment-panel-mobile').removeClass('panel-hidden');
     $('#telephone-number-panel-mobile').addClass('panel-hidden');
+
+    $('#buy-payment-mobile').prop('disabled', true);
+
+    $('#qiwi-payment-mobile').prop('checked', false);
+
+    $('#phone-number-payment-mobile').val('');
 });
 
 $('#qiwi-payment').change(function() {
@@ -58,7 +64,7 @@ $('#qiwi-payment').change(function() {
 })
 
 $("#phone-number-payment-bill").on('input', function() {
-    if($(this).val() >= 10 ) {
+    if($(this).val().length >= 10 ) {
         $('#buy-payment-bill').prop('disabled', false);
     }
 });
@@ -70,7 +76,7 @@ $('#qiwi-payment-mobile').change(function() {
 })
 
 $("#phone-number-payment-mobile").on('input', function() {
-    if($(this).val() >= 10 ) {
+    if($(this).val().length >= 10 ) {
         $('#buy-payment-mobile').prop('disabled', false);
     }
 });
