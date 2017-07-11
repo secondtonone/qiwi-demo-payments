@@ -145,3 +145,7 @@ input[type=radio]:disabled + label>img {
   position: absolute;
    top: 0;
 }
+
+.panel-info {
+  margin-bottom:  70px;
+}
