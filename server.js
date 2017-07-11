@@ -30,10 +30,14 @@ app.get(`/${failPath}`, (req, res) =>{
     res.render(__dirname + '/public/index.ejs', { page: 'fail'});
 });
 
+/*const prv_id = 481466;
+const api_id = '59058292';
+const api_password = 'MzAci8yl2NZgmoZDMZRD';*/
 
 const prv_id = '2042';
-const api_id = '59710186';
-const api_password = 'CKgKvnZyv5YAoY69DxlR';
+const api_id = '59882748';
+const api_password = 'U8C1TpaO5mPIGKiln1Vh';
+
 const amount = 0.01;
 
 const fieldsTemp = {
