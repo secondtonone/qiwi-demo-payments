@@ -140,3 +140,8 @@ input[type=radio]:disabled + label>img {
   left: 20px;
   bottom: 20px;
 }
+
+.brand-fixed {
+  position: absolute;
+   top: 0;
+}
