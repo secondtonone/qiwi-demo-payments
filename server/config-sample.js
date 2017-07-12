@@ -1,6 +1,6 @@
 const config = {
     port: process.env.PORT || 5000,
-    host: 'http://188.225.76.15:5000',
+    host: '',
     routes: [{
         path: '/',
         name: 'main'
@@ -11,9 +11,9 @@ const config = {
         path: '/failUrl',
         name: 'fail'
     }],
-    prv_id: '2042',
-    api_id: '59882748',
-    api_password: 'U8C1TpaO5mPIGKiln1Vh',
+    prv_id: '',
+    api_id: '',
+    api_password: '',
 };
 
 module.exports = config;
