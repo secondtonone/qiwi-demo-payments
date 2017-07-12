@@ -90,7 +90,7 @@ input[type=radio]:checked + label>img {
 }
 
 /* Stuff after this is only to make things more pretty */
-input[type=radio] + label>img {
+/* input[type=radio] + label>img {
   width: 90px;
   cursor: pointer;
 }
@@ -101,7 +101,7 @@ input[type=radio]:disabled + label>img {
   filter: gray;
   filter: grayscale(100%);
   cursor: auto;
-}
+} */
 
 .payment-sys:active {
   box-shadow: 0 0 3px 3px  orange;
@@ -148,4 +148,23 @@ input[type=radio]:disabled + label>img {
 
 .panel-info {
   margin-bottom:  70px;
+}
+
+.link-tag {
+  color:  gray;
+  font-size: 18px;
+  opacity: 0;
+}
+
+.title-link {
+  margin: 40px 0 20px;
+}
+
+.title-link a {
+  color: black;
+  text-decoration: none;
+}
+
+.title-link:hover .link-tag {
+  opacity: 1;
 }

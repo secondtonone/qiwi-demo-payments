@@ -4,6 +4,8 @@ $(".nav a").on("click", function(){
    $(this).parent().addClass("active");
 });
 
+$('#phone-number-payment-bill').val('');
+
 $('#buy-payment-bill').click(function() {
 
     var phoneNumber = '+7'+$('#phone-number-payment-bill').val();
@@ -19,7 +21,7 @@ $('#buy-payment-bill').click(function() {
 
     $.when($.ajax(options)).then(function(data){
         console.log(data);
-        window.location.replace(data.redirect);
+        window.location.href = data.redirect;
     });
 
 });

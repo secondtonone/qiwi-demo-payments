@@ -3,62 +3,14 @@ const qiwiRestApi = require('pull-rest-api-node-js-sdk');
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 
+const config = require('./config');
 
 const app = express();
-const port = process.env.PORT || 5000;
-const host = 'http://188.225.76.15:5000';
-const successPath = 'successUrl';
-const failPath = 'failUrl';
 
-app.set('view engine', 'ejs');
+const { host, port, routes, prv_id, api_id, api_password } = config;
 
-app.use(bodyParser.json());
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use('/',express.static('public'));
-
-app.get('/', (req, res) =>{
-    res.render(__dirname + '/public/index.ejs', { page: 'main'});
-});
-
-app.get(`/${successPath}`, (req, res) =>{
-    res.render(__dirname + '/public/index.ejs', { page: 'success'});
-});
-
-app.get(`/${failPath}`, (req, res) =>{
-    res.render(__dirname + '/public/index.ejs', { page: 'fail'});
-});
-
-/*const prv_id = 481466;
-const api_id = '59058292';
-const api_password = 'MzAci8yl2NZgmoZDMZRD';*/
-
-const prv_id = '2042';
-const api_id = '59882748';
-const api_password = 'U8C1TpaO5mPIGKiln1Vh';
-
-const amount = 0.01;
-
-const fieldsTemp = {
-    amount,
-    ccy: 'RUB',
-    comment: 'test',
-    lifetime: '2017-10-25T09:00:00',
-    user: 'tel:',
-    pay_source: 'qw'
-};
-
-const redirectOptionsTemp = {
-    transaction: '',
-    shop: prv_id,
-    iframe: true,
-    successUrl:`${host}/${successPath}`,
-    failUrl: `${host}/${failPath}`
-};
-
-
-const client = new qiwiRestApi(prv_id, api_id, api_password);
+const successPath = routes[1].path;
+const failPath = routes[2].path;
 
 
 function randomValueHex(len) {
@@ -70,6 +22,52 @@ function randomValueHex(len) {
 function generateBillId() {
     return `demo${randomValueHex(7)}`;
 }
+
+function generateRenderedRoutes (routes, rootTemp) {
+    routes.forEach(route => {
+        app.get(route.path, (req, res) =>{
+            res.render( rootTemp, { page: route.name});
+        });
+    });
+}
+
+function getISOTime() {
+    const date =  new Date();
+
+    timePlused = date.getTime() + (24*60*60*1000);
+
+    date.setTime(timePlused);
+
+    return date.toISOString();
+}
+
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/',express.static('public'));
+
+generateRenderedRoutes(routes, '../public/index.ejs');
+
+
+const fieldsTemp = {
+    amount: 0.01,
+    ccy: 'RUB',
+    lifetime: getISOTime(),
+    user: 'tel:'
+};
+
+const redirectOptionsTemp = {
+    transaction: '',
+    shop: prv_id,
+    successUrl:`${host}/${successPath}`,
+    failUrl: `${host}/${failPath}`
+};
+
+
+const client = new qiwiRestApi(prv_id, api_id, api_password);
 
 app.post('/paymentByBill', (req, res) =>{
 
