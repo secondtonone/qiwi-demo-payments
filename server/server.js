@@ -3,7 +3,16 @@ const qiwiRestApi = require('pull-rest-api-node-js-sdk');
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 
-const config = require('./config');
+const configFileName = './config'
+
+try {
+    config = require(configFileName);
+}
+catch (err) {
+    config = {};
+    console.log("unable to read file '" + configFileName + "': ", err);
+    console.log("see config-sample.js for an example");
+}
 
 const app = express();
 
